@@ -164,10 +164,14 @@ footer {
   position: relative;
   display: flex;
   align-items: center;
+}
+
+.details {
+  display: flex;
   gap: 1rem;
 }
 
-footer > img {
+.details img {
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
@@ -202,7 +206,7 @@ footer > img {
   cursor: pointer;
   margin-left: auto;
   padding: .5rem;
-  transition: all 500ms ease-in;
+  transition: opacity 300ms ease-in, transform 500ms ease-in;
 }
 
 .share.active > .share-toggle-btn {
@@ -291,11 +295,15 @@ footer > img {
     padding-right: 2rem;
   }
   
+  footer {
+    margin-right: 2rem;
+  }
+  
   .share.active .share-menu {
     height: 55px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    transform: scale(1) translate(-44%, -5rem);
+    transform: scale(1) translate(-57%, -6rem);
   }
   
   .share-menu:after {
@@ -318,7 +326,7 @@ footer > img {
   .share-menu {
     position: relative;
     height: 3.4375rem;
-    width: 15.5rem;
+    width: 15.5rem !important;
     left: 3.125rem;
     bottom: 3.125rem;
   }
