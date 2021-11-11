@@ -1,11 +1,10 @@
 const shareEl = document.querySelector('.share')
-const shareBtn = document.querySelector('.share-btn')
-const shareBtnDark = document.querySelector('.share-btn--dark')
+const shareBtn = document.querySelector('.share-toggle-btn')
 
 shareBtn.addEventListener('click', () => {
-  shareEl.classList.add('active')
-})
-
-shareBtnDark.addEventListener('click', () => {
-  shareEl.classList.remove('active')
+  if (shareEl.classList.contains('active')) {
+    shareEl.classList.remove('active')
+  } else {
+    shareEl.classList.add('active')
+  }
 })

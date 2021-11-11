@@ -17,6 +17,12 @@
   --fw-bold: 700;
 }
 
+@media (min-width: 1440px) {
+  :root {
+    --fs-lg: 1.25rem;
+  }
+}
+
 
 *,
 *::before,
@@ -123,15 +129,15 @@ select {
   object-fit: cover;
 }
 
-.card > section,
+.card > .card-content,
 .card > .details {
   margin: 0 2rem;
 }
 
-.card > section {
+.card > .card-content {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 1.25rem;
 }
 
 .sr-only {
@@ -153,21 +159,18 @@ p:first-of-type {
   color: hsl(var(--clr-dark-grayish-blue));
 }
 
+
 footer {
   position: relative;
-}
-
-.details {
   display: flex;
+  align-items: center;
   gap: 1rem;
-  padding: 0 2rem 1.5rem;
 }
 
-.details > img {
+footer > img {
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
-  margin-bottom: 1.25rem;
 }
 
 
@@ -181,28 +184,44 @@ footer {
   font-weight: var(--fw-bold);
 }
 
-.share-btn {
+/*  Share Menu */
+
+.share {
+  position: relative;
+  margin-left: auto;
+}
+
+.share-toggle-btn {
   display: grid;
   place-items: center;
   height: 2rem;
   width: 2rem;
   border: none;
   border-radius: 50%;
+  color: var(--clr-desaturated-dark-blue);
   cursor: pointer;
   margin-left: auto;
   padding: .5rem;
+  transition: all 500ms ease-in;
 }
 
-.share-btn--dark {
+.share.active > .share-toggle-btn {
+  position: absolute;
+  right: 0;
+  top: -12px;
+  z-index: 5;
+  color: #ffffff;
   background: hsl(var(--clr-desaturated-dark-blue));
   margin-left: auto;
 }
 
 
-.share {
+.share > .share-menu {
   position: absolute;
-  inset: 0 0 2rem 0;
+  inset: 0 0 0 0;
   display: flex;
+  height: 64px;
+  width: 327px;
   gap: 1.3125rem;
   align-items: center;
   background: hsl(var(--clr-dark-grayish-blue));
@@ -212,21 +231,22 @@ footer {
   opacity: 0;
   z-index: 2;
   transform: scale(0);
+  transform-origin: left top;
   transition: opacity 500ms ease-in, transform 300ms ease-in-out;
 }
 
-.share.active {
-  transform: scale(1);
-  opacity: 1;
-}
 
-.share > h4 {
+.share.active .share-menu {
+  opacity: 1;
+  transform: scale(1) translate(-295px, -28px);}
+
+.share-menu > h4 {
   letter-spacing: 5px;
   line-height: 1.25rem;
   text-transform: uppercase;
 }
 
-.social-links {
+.share-menu-links {
   display: flex;
   gap: 1rem;
 }
@@ -245,4 +265,62 @@ footer {
   color: hsl(228, 45%, 44%);
 }
 
+@media (min-width: 1440px) {
+  .card {
+    flex-direction: row;
+    width: 730px;
+    height: 280px;
+    align-items: center;
+  }
+  
+  .card-figure {
+    display: grid;
+    height: 100%;
+    grid-template-areas: "content";
+    place-items: stretch;
+  }
+  
+  .card-image {
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 10px;
+    grid-area: content;
+    object-position: left;
+  }
+  
+  .card-content > p:first-child {
+    padding-right: 2rem;
+  }
+  
+  .share.active .share-menu {
+    height: 55px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transform: scale(1) translate(-44%, -5rem);
+  }
+  
+  .share-menu:after {
+    content: '';
+    position: absolute;
+    display: block;
+    bottom: -.9rem;
+    left: 50%;
+    width: 0;
+    border-width: 15px 15px 0;
+    border-style: solid;
+    border-color: hsl(var(--clr-dark-grayish-blue)) transparent;
+    transform: translateX(-50%);
+  }
+  
+  .share-menu .share-btn--dark {
+    display: none;
+  }
+  
+  .share-menu {
+    position: relative;
+    height: 3.4375rem;
+    width: 15.5rem;
+    left: 3.125rem;
+    bottom: 3.125rem;
+  }
+}
 
