@@ -15,6 +15,8 @@
   
   --fw-med: 500;
   --fw-bold: 700;
+  
+  --border-radius: .625rem;
 }
 
 @media (min-width: 1440px) {
@@ -110,11 +112,11 @@ select {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  width: 327px;
-  height: 512px;
+  width: 20.4375rem;
+  height: 32rem;
   background: #fff;
   box-shadow: 0 40px 40px -10px rgba(201, 213, 225, 0.503415);
-  border-radius: 10px;
+  border-radius: var(--border-radius);
 }
 
 .card-figure {
@@ -124,8 +126,8 @@ select {
 .card-image {
   max-height: 100%;
   width: 100%;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
   object-fit: cover;
 }
 
@@ -224,13 +226,13 @@ footer {
   position: absolute;
   inset: 0 0 0 0;
   display: flex;
-  height: 64px;
-  width: 327px;
+  height: 4rem;
+  width: 20.4375rem;
   gap: 1.3125rem;
   align-items: center;
   background: hsl(var(--clr-dark-grayish-blue));
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
   padding: 1.375rem 2rem;
   opacity: 0;
   z-index: 2;
@@ -272,8 +274,8 @@ footer {
 @media (min-width: 1440px) {
   .card {
     flex-direction: row;
-    width: 730px;
-    height: 280px;
+    width: 45.625rem;
+    height: 17.5rem;
     align-items: center;
   }
   
@@ -300,9 +302,9 @@ footer {
   }
   
   .share.active .share-menu {
-    height: 55px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    height: 3.4375rem;
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
     transform: scale(1) translate(-57%, -6rem);
   }
   
