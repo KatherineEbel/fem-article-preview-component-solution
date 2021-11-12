@@ -260,7 +260,6 @@ p {
 }
 
 .attribution {
-  position: fixed;
   grid-area: content;
   transform: translateY(17rem);
   width: 100%;
