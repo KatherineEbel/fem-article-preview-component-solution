@@ -111,7 +111,7 @@ select {
 .card {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
   width: 20.4375rem;
   height: 32rem;
   background: #fff;
@@ -119,16 +119,13 @@ select {
   border-radius: var(--border-radius);
 }
 
-.card-figure {
-  height: 39.0625%;
-}
-
 .card-image {
-  max-height: 100%;
+  height: 12.5rem;
   width: 100%;
   border-top-left-radius: var(--border-radius);
   border-top-right-radius: var(--border-radius);
   object-fit: cover;
+  object-position: 50% 31%;
 }
 
 .card > .card-content,
@@ -139,7 +136,7 @@ select {
 .card > .card-content {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: .75rem;
 }
 
 .sr-only {
@@ -155,10 +152,15 @@ select {
 }
 
 p:first-of-type {
+  margin-top: 1rem;
   font-size: var(--fs-lg);
   font-weight: var(--fw-bold);
   line-height: 1.75rem;
   color: hsl(var(--clr-dark-grayish-blue));
+}
+
+p:last-of-type {
+  margin-bottom: 1rem;
 }
 
 
@@ -204,11 +206,12 @@ footer {
   width: 2rem;
   border: none;
   border-radius: 50%;
-  color: var(--clr-desaturated-dark-blue);
+  color: hsl(var(--clr-desaturated-dark-blue));
   cursor: pointer;
   margin-left: auto;
   padding: .5rem;
   transition: opacity 300ms ease-in, transform 500ms ease-in;
+  z-index: 3;
 }
 
 .share.active > .share-toggle-btn {
@@ -254,6 +257,7 @@ footer {
 
 .share-menu-links {
   display: flex;
+  align-items: center;
   gap: 1rem;
 }
 
@@ -274,22 +278,19 @@ footer {
 @media (min-width: 1440px) {
   .card {
     flex-direction: row;
+    gap: 0;
     width: 45.625rem;
     height: 17.5rem;
     align-items: center;
   }
   
-  .card-figure {
-    display: grid;
-    height: 100%;
-    grid-template-areas: "content";
-    place-items: stretch;
-  }
-  
   .card-image {
+    height: 100%;
+    width: 17.8125rem;
     border-top-right-radius: 0;
     border-bottom-left-radius: 10px;
     grid-area: content;
+    object-fit: cover;
     object-position: left;
   }
   
