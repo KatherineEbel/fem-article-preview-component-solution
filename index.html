@@ -18,14 +18,14 @@
     <title>Frontend Mentor | Article preview component</title>
   </head>
   <body>
-    <article class='card'>
+    <main class='card'>
       <img class='card-image' src='images/drawers.jpg'
            alt='nightstand with decorations'/>
-      <section class='card-content'>
-        <p>
+      <div class='card-body'>
+        <h1>
           Shift the overall look and feel by adding these wonderful
           touches to furniture in your home
-        </p>
+        </h1>
         <p>
           Ever been in a room and felt like something was missing?
           Perhaps
@@ -33,8 +33,8 @@
           tips
           to help you make any room feel complete.
         </p>
-        <footer>
-          <section class='details'>
+        <aside class='author-info'>
+          <div class='author-info-details'>
             <img src='images/avatar-michelle.jpg'
                  alt="Michelle Appleton"/>
             <div class='about'>
@@ -43,7 +43,7 @@
                 28 Jun 2020
               </h3>
             </div>
-          </section>
+          </div>
           <div class='share'>
             <button class='share-toggle-btn' aria-label='Share'>
               <span class='sr-only'>Share</span>
@@ -55,35 +55,39 @@
             </button>
             <div class='share-menu'>
               <h4>Share</h4>
-              <section class='share-menu-links'>
-                <a href='https://facebook.com' target='_blank' rel='noreferrer'>
-                  <img src='images/icon-facebook.svg' alt='Facebook'>
-                </a>
-                <a href='https://twitter.com' target='_blank'
-                   rel='noreferrer'>
-                  <img src='images/icon-twitter.svg' alt='Twitter'>
-                </a>
-                <a href='https://pinterest.com' target='_blank'
-                   rel='noreferrer'>
-                  <img src='images/icon-pinterest.svg' alt='Pinterest'>
-                </a>
-              </section>
+              <menu class='share-menu-links'>
+                <li>
+                  <a href='https://facebook.com' target='_blank' rel='noreferrer'>
+                    <img src='images/icon-facebook.svg' alt='Facebook'>
+                  </a>
+                </li>
+                <li>
+                  <a href='https://twitter.com' target='_blank'
+                     rel='noreferrer'>
+                    <img src='images/icon-twitter.svg' alt='Twitter'>
+                  </a>
+                </li>
+                <li>
+                  <a href='https://pinterest.com' target='_blank'
+                     rel='noreferrer'>
+                    <img src='images/icon-pinterest.svg' alt='Pinterest'>
+                  </a>
+                </li>
+              </menu>
             </div>
           </div>
+        </aside>
+      </div>
+    </main>
 
-        </footer>
-
-      </section>
-    </article>
-
-    <div class="attribution">
+    <footer class="attribution">
       Challenge by <a
         href="https://www.frontendmentor.io?ref=challenge"
         target="_blank">Frontend Mentor</a>.
       Coded by <a
         href="https://www.frontendmentor.io/profile/KatherineEbel"
         target='_blank' rel='noreferrer'>Katherine Ebel</a>.
-    </div>
+    </footer>
     <script src='script.js'></script>
   </body>
 </html>
