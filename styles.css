@@ -38,7 +38,6 @@ blockquote,
 dl,
 dd,
 main,
-menu,
 button {
   margin: 0;
 }
@@ -203,7 +202,6 @@ p {
   border-bottom-left-radius: var(--border-radius);
   border-bottom-right-radius: var(--border-radius);
   padding: 1.375rem 2rem;
-  z-index: 2;
   opacity: 0;
   transform: scale(0);
   transform-origin: top right;
@@ -225,6 +223,7 @@ p {
 .share-menu-links {
   position: relative;
   display: flex;
+  list-style: none;
   align-items: center;
   padding-left: 0;
   gap: 1rem;
